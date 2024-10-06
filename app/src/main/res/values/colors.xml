@@ -6,4 +6,5 @@
     <color name="OnSurfaceColor">#A5A5A5</color>
     <color name="BackgroundColor">#FBFAFF</color>
     <color name="OnBackgroundColor">#000021</color>
+    <color name="back_logo">#FBFAFF</color>
 </resources>
