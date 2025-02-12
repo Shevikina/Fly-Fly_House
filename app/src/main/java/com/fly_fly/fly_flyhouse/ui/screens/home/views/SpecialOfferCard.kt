@@ -84,7 +84,6 @@ fun SpecialOfferCard(
                 thickness = 2.dp,
                 dashWidth = 4.dp,
                 gapWidth = 4.dp,
-//                modifier = Modifier.padding(top = 3.dp, bottom = 3.dp, end = 75.dp)
                 modifier = Modifier.padding(vertical = 3.dp)
             )
             Text(
