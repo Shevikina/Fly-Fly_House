@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
+import com.fly_fly.fly_flyhouse.utils.advancedShadow
 
 @Composable
 fun ServiceCard(
@@ -34,10 +35,12 @@ fun ServiceCard(
         horizontalArrangement = Arrangement.spacedBy(9.dp),
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
-            .shadow(
-                4.dp,
-                JetFlyFlyHouseTheme.shapes.medium,
-                spotColor = Color.Black.copy(0.05f)
+            .advancedShadow(
+                color = Color.Black,
+                alpha = 0.05f,
+                cornersRadius = 16.dp,
+                shadowBlurRadius = 4.dp,
+                offsetY = 4.dp
             )
             .background(
                 JetFlyFlyHouseTheme.colorScheme.secondary.copy(0.5f),

@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
+import com.fly_fly.fly_flyhouse.utils.advancedShadow
 
 @Composable
 fun JetSearchField(
@@ -35,9 +36,12 @@ fun JetSearchField(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Start,
         modifier = modifier
-            .shadow(
-                4.dp,
-                ambientColor = Color.Black.copy(0.02f)
+            .advancedShadow(
+                color = Color.Black,
+                alpha = 0.02f,
+                cornersRadius = 8.dp,
+                shadowBlurRadius = 4.dp,
+                offsetY = 5.dp
             )
             .background(
                 JetFlyFlyHouseTheme.colorScheme.surface,
