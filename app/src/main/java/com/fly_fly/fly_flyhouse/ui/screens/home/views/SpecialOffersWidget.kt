@@ -33,7 +33,7 @@ fun SpecialOffersWidget() {
                 text = stringResource(id = R.string.special_offers_title),
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.onBackground,
-                    fontWeight = FontWeight.Medium,
+                    fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
                     lineHeight = 21.09.sp
                 )
