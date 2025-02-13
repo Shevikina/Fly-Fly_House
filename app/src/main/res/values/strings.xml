@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Fly-Fly House</string>
-    <string name="search_hint">Find an event, location or organizer</string>
+    <string name="search_hint">Find an event, location or service</string>
     <string name="upcoming_event_title">Upcoming event</string>
     <string name="news_title">News</string>
     <string name="other_button">Other</string>
