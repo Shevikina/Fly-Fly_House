@@ -56,7 +56,10 @@ fun ServiceCard(
             contentDescription = null,
             tint = iconColor,
             modifier = Modifier
-                .background(JetFlyFlyHouseTheme.colorScheme.primary.copy(0.05f), CircleShape)
+                .background(
+                    iconColor.copy(iconColor.alpha * 0.1f),
+                    CircleShape
+                )
                 .padding(6.dp)
         )
         Text(
