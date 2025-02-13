@@ -23,9 +23,10 @@ import com.microsoft.fluent.mobile.icons.R
 @Composable
 fun JetIconButton(
     vectorDrawableId: Int,
-    modifier: Modifier = Modifier,
+    iconColor: Color = Color.Black,
     shape: CornerBasedShape = RoundedCornerShape(8.dp),
     contentPadding: PaddingValues = PaddingValues(10.dp),
+    modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
     Box(
@@ -42,7 +43,7 @@ fun JetIconButton(
         Icon(
             painter = painterResource(id = vectorDrawableId),
             contentDescription = "Icon button",
-            tint = JetFlyFlyHouseTheme.colorScheme.primary
+            tint = iconColor
         )
     }
 }
@@ -58,6 +59,7 @@ private fun JetIconButtonPreview() {
         ) {
             JetIconButton(
                 vectorDrawableId = R.drawable.ic_fluent_qr_code_24_regular,
+                iconColor = JetFlyFlyHouseTheme.colorScheme.primary,
                 contentPadding = PaddingValues(10.dp),
                 shape = JetFlyFlyHouseTheme.shapes.small
             ) {
