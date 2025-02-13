@@ -6,4 +6,6 @@
     <string name="other_button">Other</string>
     <string name="news_types_button">News types</string>
     <string name="min">min</string>
+    <string name="special_offers_title">Special offers</string>
+    <string name="our_services_title">Our services</string>
 </resources>

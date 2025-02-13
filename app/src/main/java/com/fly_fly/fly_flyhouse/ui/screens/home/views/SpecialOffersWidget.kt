@@ -15,11 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fly_fly.fly_flyhouse.R
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 
@@ -28,7 +30,7 @@ fun SpecialOffersWidget() {
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = "Лучшие предложения",
+                text = stringResource(id = R.string.special_offers_title),
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.onBackground,
                     fontWeight = FontWeight.Medium,

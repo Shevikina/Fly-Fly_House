@@ -6,4 +6,6 @@
     <string name="other_button">К другим</string>
     <string name="news_types_button">Типы новостей</string>
     <string name="min">мин</string>
+    <string name="special_offers_title">Лучшие предложения</string>
+    <string name="our_services_title">Наши сервисы</string>
 </resources>

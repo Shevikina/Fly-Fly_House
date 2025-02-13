@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,7 +26,7 @@ fun ServicesWidget() {
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = "Наши сервисы",
+                text = stringResource(id = com.fly_fly.fly_flyhouse.R.string.our_services_title),
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.onBackground,
                     fontSize = 18.sp,
@@ -35,7 +36,7 @@ fun ServicesWidget() {
             )
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                text = "К другим",
+                text = stringResource(id = com.fly_fly.fly_flyhouse.R.string.other_button),
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.primary,
                     fontSize = 12.sp,
@@ -78,7 +79,7 @@ fun ServicesWidget() {
     }
 }
 
-@Preview
+@Preview(locale = "Ru")
 @Composable
 private fun ServicesWidgetPreview() {
     FlyFlyHouseTheme {
