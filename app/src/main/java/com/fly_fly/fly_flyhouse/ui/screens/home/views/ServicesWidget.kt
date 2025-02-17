@@ -53,13 +53,13 @@ fun ServicesWidget() {
                     vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_globe_location_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
                     modifier = Modifier.weight(1f)
-                )
+                ) {}
                 ServiceCard(
                     label = "Наши мероприятия",
                     vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_megaphone_loud_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
                     modifier = Modifier.weight(1f)
-                )
+                ) {}
             }
             Row(horizontalArrangement = Arrangement.spacedBy(13.dp)) {
                 ServiceCard(
@@ -67,13 +67,13 @@ fun ServicesWidget() {
                     vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_guardian_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
                     modifier = Modifier.weight(1f)
-                )
+                ) {}
                 ServiceCard(
                     label = "Наши рестораны",
                     vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_bowl_salad_20_filled,
                     iconColor = Color(0xFF56CB03),
                     modifier = Modifier.weight(1f)
-                )
+                ) {}
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.fly_fly.fly_flyhouse.ui.screens.home.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -41,7 +42,8 @@ fun SpecialOfferCard(
     description: String,
     imagePath: String,
     price: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null
 ) {
     Column(
         modifier = modifier
@@ -56,6 +58,11 @@ fun SpecialOfferCard(
                 JetFlyFlyHouseTheme.colorScheme.secondary,
                 JetFlyFlyHouseTheme.shapes.small
             )
+            .let {
+                if (onClick != null) it
+                    .clip(JetFlyFlyHouseTheme.shapes.small)
+                    .clickable(onClick = onClick) else it
+            }
 
     ) {
         AsyncImage(
@@ -126,7 +133,7 @@ private fun SpecialOfferCardPreview() {
                 imagePath = "file:///android_asset/App4_Image2.jpg",
                 price = 1500,
                 Modifier
-            )
+            ) {}
         }
     }
 }

@@ -52,7 +52,7 @@ fun SpecialOffersWidget() {
             description = "Десятки палуб, секретные лаборатории и технологичные дроиды уже ...",
             imagePath = "file:///android_asset/App4_Image2.jpg",
             price = 1500
-        )
+        ) {}
     }
 }
 

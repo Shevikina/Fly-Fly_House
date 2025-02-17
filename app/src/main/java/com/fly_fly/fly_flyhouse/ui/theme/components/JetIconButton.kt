@@ -11,6 +11,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,7 +28,7 @@ fun JetIconButton(
     shape: CornerBasedShape = RoundedCornerShape(8.dp),
     contentPadding: PaddingValues = PaddingValues(10.dp),
     modifier: Modifier = Modifier,
-    onClick: () -> Unit
+    onClick: (() -> Unit)? = null
 ) {
     Box(
         contentAlignment = Alignment.Center,
@@ -37,8 +38,12 @@ fun JetIconButton(
                 JetFlyFlyHouseTheme.colorScheme.secondary,
                 shape
             )
+            .let {
+                if (onClick != null) it
+                    .clip(shape)
+                    .clickable(onClick = onClick) else it
+            }
             .padding(contentPadding)
-            .clickable(onClick = onClick)
     ) {
         Icon(
             painter = painterResource(id = vectorDrawableId),

@@ -2,6 +2,7 @@ package com.fly_fly.fly_flyhouse.ui.screens.home.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -13,7 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -29,7 +30,8 @@ fun ServiceCard(
     label: String,
     vectorDrawableId: Int,
     iconColor: Color,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null
 ) {
     Row(
         horizontalArrangement = Arrangement.spacedBy(9.dp),
@@ -51,6 +53,11 @@ fun ServiceCard(
                 JetFlyFlyHouseTheme.colorScheme.primary.copy(0.1f),
                 JetFlyFlyHouseTheme.shapes.medium
             )
+            .let {
+                if (onClick != null) it
+                    .clip(JetFlyFlyHouseTheme.shapes.medium)
+                    .clickable(onClick = onClick) else it
+            }
             .padding(vertical = 12.dp)
             .padding(start = 13.dp, end = 10.dp)
     ) {
@@ -91,7 +98,7 @@ private fun ServiceCardPreview() {
                 vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_globe_location_24_filled,
                 iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
                 modifier = Modifier.width(160.dp)
-            )
+            ) {}
         }
     }
 }
