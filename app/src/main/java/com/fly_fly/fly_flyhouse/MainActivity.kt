@@ -31,8 +31,14 @@ class MainActivity : ComponentActivity() {
 }
 
 sealed class NavScreen {
-    data object Statistics : NavScreen()
-    data object Catch: NavScreen()
+    data object Home : NavScreen()
+    data object UserProfile : NavScreen()
+    data object Search : NavScreen()
+    data object MapObjects : NavScreen()
+    data object Events : NavScreen()
+    data object Entertainments : NavScreen()
+    data object Restaurants : NavScreen()
+    data class SpecialOfferPage(val offerId: Int) : NavScreen()
 }
 
 @Composable
