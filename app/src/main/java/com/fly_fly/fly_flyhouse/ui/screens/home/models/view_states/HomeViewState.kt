@@ -1,4 +1,4 @@
-package com.fly_fly.fly_flyhouse.models.view_states
+package com.fly_fly.fly_flyhouse.ui.screens.home.models.view_states
 
 sealed class HomeViewState {
     data object Loading : HomeViewState()

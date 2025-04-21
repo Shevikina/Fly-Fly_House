@@ -1,4 +1,4 @@
-package com.fly_fly.fly_flyhouse.models.events
+package com.fly_fly.fly_flyhouse.ui.screens.home.models.events
 
 sealed class EntertainmentsEvent {
     data object EnterScreen : EntertainmentsEvent()
