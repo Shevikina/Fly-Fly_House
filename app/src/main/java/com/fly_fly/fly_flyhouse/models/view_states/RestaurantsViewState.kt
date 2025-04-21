@@ -1,4 +1,4 @@
-package com.fly_fly.fly_flyhouse.models
+package com.fly_fly.fly_flyhouse.models.view_states
 
 sealed class RestaurantsViewState {
     data object Loading : RestaurantsViewState()
