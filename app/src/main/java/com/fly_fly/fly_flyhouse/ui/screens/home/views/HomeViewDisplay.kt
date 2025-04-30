@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.R
+import com.fly_fly.fly_flyhouse.ui.screens.home.models.HomeEvent
 import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.ServicesWidget
 import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.SpecialOffersWidget
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
@@ -33,7 +34,7 @@ import com.fly_fly.fly_flyhouse.ui.theme.components.JetIconButton
 import com.fly_fly.fly_flyhouse.ui.theme.components.JetSearchField
 
 @Composable
-fun HomeViewDisplay() {
+fun HomeViewDisplay(dispatcher: (HomeEvent) -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(32.dp),
@@ -108,6 +109,6 @@ fun HomeViewDisplay() {
 @Composable
 private fun HomeViewDisplayPreview() {
     FlyFlyHouseTheme {
-        HomeViewDisplay()
+        HomeViewDisplay {}
     }
 }
