@@ -20,6 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.fly_fly.fly_flyhouse.data.local.Database
+import com.fly_fly.fly_flyhouse.data.local.ui.models.SpecialOfferInfo
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.utils.DottedDivider
@@ -38,10 +40,7 @@ private fun Int.getFormatted(): String {
 
 @Composable
 fun SpecialOfferCard(
-    title: String,
-    description: String,
-    imagePath: String,
-    price: Int,
+    info: SpecialOfferInfo,
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null
 ) {
@@ -66,7 +65,7 @@ fun SpecialOfferCard(
 
     ) {
         AsyncImage(
-            model = imagePath,
+            model = info.imagePath,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -79,7 +78,7 @@ fun SpecialOfferCard(
             modifier = Modifier.padding(20.dp, 16.dp, 80.dp)
         ) {
             Text(
-                text = title,
+                text = info.title,
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.primary,
                     fontWeight = FontWeight.Medium,
@@ -94,7 +93,7 @@ fun SpecialOfferCard(
                 modifier = Modifier.padding(vertical = 3.dp)
             )
             Text(
-                text = description,
+                text = info.description,
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.onSecondary,
                     fontSize = 12.sp,
@@ -104,7 +103,7 @@ fun SpecialOfferCard(
             )
         }
         Text(
-            text = "${price.getFormatted()} Kr",
+            text = "${info.price.getFormatted()} Kr",
             style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                 color = JetFlyFlyHouseTheme.colorScheme.primary,
                 fontSize = 12.sp,
@@ -128,12 +127,10 @@ private fun SpecialOfferCardPreview() {
                 .padding(32.dp)
         ) {
             SpecialOfferCard(
-                title = "Экскурсия по крейсеру “Альт”",
-                description = "Десятки палуб, секретные лаборатории и технологичные дроиды уже ...",
-                imagePath = "file:///android_asset/App4_Image2.jpg",
-                price = 1500,
-                Modifier
-            ) {}
+                Database.offerList.first { it.id == 0 },
+                Modifier,
+                onClick = {}
+            )
         }
     }
 }

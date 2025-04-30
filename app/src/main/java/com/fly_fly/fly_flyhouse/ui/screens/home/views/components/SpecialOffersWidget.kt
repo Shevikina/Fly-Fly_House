@@ -22,11 +22,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.R
+import com.fly_fly.fly_flyhouse.data.local.Database
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 
 @Composable
-fun SpecialOffersWidget() {
+fun SpecialOffersWidget(offerId: Int, onCardClicked: (Int) -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -48,11 +49,9 @@ fun SpecialOffersWidget() {
             }
         }
         SpecialOfferCard(
-            title = "Экскурсия по крейсеру “Альт”",
-            description = "Десятки палуб, секретные лаборатории и технологичные дроиды уже ...",
-            imagePath = "file:///android_asset/App4_Image2.jpg",
-            price = 1500
-        ) {}
+            Database.offerList.first { it.id == offerId },
+            onClick = { onCardClicked(offerId) }
+        )
     }
 }
 
@@ -65,7 +64,7 @@ private fun SpecialOffersWidgetPreview() {
                 .background(JetFlyFlyHouseTheme.colorScheme.background)
                 .padding(32.dp)
         ) {
-            SpecialOffersWidget()
+            SpecialOffersWidget(0) {}
         }
     }
 }

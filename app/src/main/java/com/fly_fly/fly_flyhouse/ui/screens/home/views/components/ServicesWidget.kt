@@ -23,7 +23,13 @@ import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 import com.microsoft.fluent.mobile.icons.R
 
 @Composable
-fun ServicesWidget() {
+fun ServicesWidget(
+    onOtherClick: () -> Unit,
+    onEntertainmentsClick: () -> Unit,
+    onRestaurantsClick: () -> Unit,
+    onMapObjectsClick: () -> Unit,
+    onEventsClick: () -> Unit
+) {
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -44,7 +50,7 @@ fun ServicesWidget() {
                     fontWeight = FontWeight.Bold,
                     lineHeight = 14.06.sp
                 ),
-                modifier = Modifier.clickable { println("clicked") }
+                modifier = Modifier.clickable(onClick = onOtherClick)
             )
         }
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -53,28 +59,32 @@ fun ServicesWidget() {
                     label = "Наши объекты на карте",
                     vectorDrawableId = R.drawable.ic_fluent_globe_location_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
-                    modifier = Modifier.weight(1f)
-                ) {}
+                    modifier = Modifier.weight(1f),
+                    onClick = onMapObjectsClick
+                )
                 ServiceCard(
                     label = "Наши мероприятия",
                     vectorDrawableId = R.drawable.ic_fluent_megaphone_loud_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
-                    modifier = Modifier.weight(1f)
-                ) {}
+                    modifier = Modifier.weight(1f),
+                    onClick = onEventsClick
+                )
             }
             Row(horizontalArrangement = Arrangement.spacedBy(13.dp)) {
                 ServiceCard(
                     label = "Наши развлечения",
                     vectorDrawableId = R.drawable.ic_fluent_guardian_20_filled,
                     iconColor = JetFlyFlyHouseTheme.colorScheme.primary.copy(0.5f),
-                    modifier = Modifier.weight(1f)
-                ) {}
+                    modifier = Modifier.weight(1f),
+                    onClick = onEntertainmentsClick
+                )
                 ServiceCard(
                     label = "Наши рестораны",
                     vectorDrawableId = R.drawable.ic_fluent_bowl_salad_20_filled,
                     iconColor = Color(0xFF56CB03),
-                    modifier = Modifier.weight(1f)
-                ) {}
+                    modifier = Modifier.weight(1f),
+                    onClick = onRestaurantsClick
+                )
             }
         }
     }
@@ -89,7 +99,13 @@ private fun ServicesWidgetPreview() {
                 .background(JetFlyFlyHouseTheme.colorScheme.background)
                 .padding(32.dp)
         ) {
-            ServicesWidget()
+            ServicesWidget(
+                onOtherClick = {},
+                onEntertainmentsClick = {},
+                onRestaurantsClick = {},
+                onMapObjectsClick = {},
+                onEventsClick = {}
+            )
         }
     }
 }
