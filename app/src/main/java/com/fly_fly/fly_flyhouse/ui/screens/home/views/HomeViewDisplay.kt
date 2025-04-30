@@ -1,6 +1,7 @@
 package com.fly_fly.fly_flyhouse.ui.screens.home.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.R
+import com.fly_fly.fly_flyhouse.ui.navigation.NavScreen
 import com.fly_fly.fly_flyhouse.ui.screens.home.models.HomeEvent
 import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.ServicesWidget
 import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.SpecialOffersWidget
@@ -54,7 +56,7 @@ fun HomeViewDisplay(dispatcher: (HomeEvent) -> Unit) {
                 shape = JetFlyFlyHouseTheme.shapes.small,
                 contentPadding = PaddingValues(10.dp),
                 modifier = Modifier.size(48.dp)
-            ) { println("Clicked on profile") }
+            ) { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.UserProfile)) }
             Spacer(modifier = Modifier.weight(1f))
             Column(
                 verticalArrangement = Arrangement.spacedBy(2.dp),
@@ -98,10 +100,21 @@ fun HomeViewDisplay(dispatcher: (HomeEvent) -> Unit) {
         }
         JetSearchField(
             hint = stringResource(id = R.string.search_hint).plus(" ..."),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.Search)) }
         )
-        ServicesWidget()
-        SpecialOffersWidget()
+        ServicesWidget(
+            onOtherClick = {},
+            onEntertainmentsClick = { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.Entertainments)) },
+            onRestaurantsClick = { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.Restaurants)) },
+            onMapObjectsClick = { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.MapObjects)) },
+            onEventsClick = { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.Events)) }
+        )
+        SpecialOffersWidget(
+            offerId = 0,
+            onCardClicked = { dispatcher.invoke(HomeEvent.OpenScreen(NavScreen.SpecialOfferPage(it))) }
+        )
     }
 }
 
