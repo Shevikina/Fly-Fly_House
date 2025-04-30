@@ -1,0 +1,7 @@
+package com.fly_fly.fly_flyhouse.ui.screens.entertainments.models
+
+sealed class EntertainmentsViewState {
+    data object Loading : EntertainmentsViewState()
+    data class Error(val message: String, val icon: Int) : EntertainmentsViewState()
+    data class Display(val activities: List<String>) : EntertainmentsViewState()
+}

@@ -25,6 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fly_fly.fly_flyhouse.R
+import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.ServicesWidget
+import com.fly_fly.fly_flyhouse.ui.screens.home.views.components.SpecialOffersWidget
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.components.JetIconButton
