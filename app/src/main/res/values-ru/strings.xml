@@ -8,4 +8,6 @@
     <string name="min">мин</string>
     <string name="special_offers_title">Лучшие предложения</string>
     <string name="our_services_title">Наши сервисы</string>
+    <string name="price_title">Цена</string>
+    <string name="send_application_button">Отправить заявку</string>
 </resources>

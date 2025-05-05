@@ -8,4 +8,6 @@
     <string name="min">min</string>
     <string name="special_offers_title">Special offers</string>
     <string name="our_services_title">Our services</string>
+    <string name="price_title">Price</string>
+    <string name="send_application_button">Send an application</string>
 </resources>
