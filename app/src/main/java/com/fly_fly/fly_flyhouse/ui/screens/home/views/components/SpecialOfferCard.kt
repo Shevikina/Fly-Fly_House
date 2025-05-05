@@ -16,8 +16,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.fly_fly.fly_flyhouse.data.local.Database
@@ -82,8 +84,9 @@ fun SpecialOfferCard(
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.primary,
                     fontWeight = FontWeight.Medium,
-                    lineHeight = 18.75.sp
-                ),
+                    lineHeight = 1.em,
+                    letterSpacing = 0.em
+                )
             )
             DottedDivider(
                 color = JetFlyFlyHouseTheme.colorScheme.onSecondary.copy(0.24f),
@@ -94,11 +97,14 @@ fun SpecialOfferCard(
             )
             Text(
                 text = info.description,
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2,
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.onSecondary,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Medium,
-                    lineHeight = 14.06.sp
+                    lineHeight = 1.em,
+                    letterSpacing = 0.em
                 )
             )
         }

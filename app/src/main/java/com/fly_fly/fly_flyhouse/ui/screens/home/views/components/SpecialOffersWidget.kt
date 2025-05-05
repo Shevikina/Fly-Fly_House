@@ -27,7 +27,11 @@ import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 
 @Composable
-fun SpecialOffersWidget(offerId: Int, onCardClicked: (Int) -> Unit) {
+fun SpecialOffersWidget(
+    offerId: Int,
+    onFilterClick: () -> Unit = {},
+    onCardClicked: (Int) -> Unit
+) {
     Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -40,7 +44,7 @@ fun SpecialOffersWidget(offerId: Int, onCardClicked: (Int) -> Unit) {
                 )
             )
             Spacer(modifier = Modifier.weight(1f))
-            IconButton(onClick = { println("Filtered") }, modifier = Modifier.size(24.dp)) {
+            IconButton(onClick = onFilterClick, modifier = Modifier.size(24.dp)) {
                 Icon(
                     imageVector = ImageVector.vectorResource(com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_filter_24_filled),
                     contentDescription = null,
@@ -64,7 +68,11 @@ private fun SpecialOffersWidgetPreview() {
                 .background(JetFlyFlyHouseTheme.colorScheme.background)
                 .padding(32.dp)
         ) {
-            SpecialOffersWidget(0) {}
+            SpecialOffersWidget(
+                offerId = 0,
+                onFilterClick = {},
+                onCardClicked = {}
+            )
         }
     }
 }
