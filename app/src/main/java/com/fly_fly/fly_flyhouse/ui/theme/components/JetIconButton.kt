@@ -24,10 +24,10 @@ import com.microsoft.fluent.mobile.icons.R
 @Composable
 fun JetIconButton(
     vectorDrawableId: Int,
+    modifier: Modifier = Modifier,
     iconColor: Color = Color.Black,
     shape: CornerBasedShape = RoundedCornerShape(8.dp),
     contentPadding: PaddingValues = PaddingValues(10.dp),
-    modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null
 ) {
     Box(
