@@ -28,17 +28,7 @@ import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.utils.DottedDivider
 import com.fly_fly.fly_flyhouse.utils.advancedShadow
-
-private fun Int.getFormatted(): String {
-    var res = ""
-    var tmp = this
-    while (tmp > 0) {
-        val toAdd = if (tmp % 1000 == 0) "000" else "${tmp % 1000}"
-        res = "$toAdd $res"
-        tmp /= 1000
-    }
-    return res.trim()
-}
+import com.fly_fly.fly_flyhouse.utils.getFormatted
 
 @Composable
 fun SpecialOfferCard(
