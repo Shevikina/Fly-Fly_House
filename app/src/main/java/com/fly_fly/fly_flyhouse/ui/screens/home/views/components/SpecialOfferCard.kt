@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.fly_fly.fly_flyhouse.data.local.Database
-import com.fly_fly.fly_flyhouse.data.local.ui.models.SpecialOfferInfo
+import com.fly_fly.fly_flyhouse.data.local.entity.OfferDetails
 import com.fly_fly.fly_flyhouse.ui.theme.FlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.ui.theme.JetFlyFlyHouseTheme
 import com.fly_fly.fly_flyhouse.utils.DottedDivider
@@ -32,7 +32,7 @@ import com.fly_fly.fly_flyhouse.utils.getFormatted
 
 @Composable
 fun SpecialOfferCard(
-    info: SpecialOfferInfo,
+    info: OfferDetails,
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null
 ) {
@@ -70,7 +70,7 @@ fun SpecialOfferCard(
             modifier = Modifier.padding(20.dp, 16.dp, 80.dp)
         ) {
             Text(
-                text = info.title,
+                text = info.name,
                 style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                     color = JetFlyFlyHouseTheme.colorScheme.primary,
                     fontWeight = FontWeight.Medium,

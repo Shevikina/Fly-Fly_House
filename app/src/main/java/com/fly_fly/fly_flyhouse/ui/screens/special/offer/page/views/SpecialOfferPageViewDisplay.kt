@@ -55,7 +55,7 @@ fun SpecialOfferPageViewDisplay(
 
         Spacer(modifier = Modifier.height(20.dp))
         Text(
-            text = info.title,
+            text = info.name,
             style = JetFlyFlyHouseTheme.typography.bodyLarge.copy(
                 color = JetFlyFlyHouseTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
